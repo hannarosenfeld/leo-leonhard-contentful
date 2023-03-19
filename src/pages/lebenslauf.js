@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
+import { SEO } from '../components/Seo'
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
 import Layout from '../components/Layout'
@@ -43,6 +44,8 @@ const lebenslaufStationen = [
         image: `${auszeichnungen}`
     }
 ]
+
+const title = 'Über Leon-Leonhard'
 
 const LebenslaufPage = ({ data }) => (
     <Layout>
@@ -93,3 +96,5 @@ export const query = graphql`
 `
 
 export default LebenslaufPage
+
+export const Head = () => <SEO title={title} />

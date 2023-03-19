@@ -189,4 +189,4 @@ export const query = graphql`
     }
 `
 
-export const Head = () => <SEO title="Grafik" />
+export const Head = () => <SEO title="Das grafische Werk" />

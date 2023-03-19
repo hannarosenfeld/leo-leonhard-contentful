@@ -2,6 +2,8 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+import { SEO } from '../components/Seo'
+
 import Layout from '../components/Layout'
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
@@ -164,3 +166,5 @@ export const query = graphql`
 `
 
 export default PublikationenPage
+
+export const Head = () => <SEO title="Leo Leonhard als Buchillustrator" />

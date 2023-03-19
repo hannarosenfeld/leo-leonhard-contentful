@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { SEO } from '../components/Seo'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/footer/Footer'
@@ -114,3 +115,5 @@ export const query = graphql`
         }
     }
 `
+
+export const Head = () => <SEO title="EINZELAUSSTELLUNGEN VOM LEO LEONHARD" />

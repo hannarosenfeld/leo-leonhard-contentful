@@ -2,6 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 
+import { SEO } from '../components/Seo'
+
 import Layout from '../components/Layout'
 import Template from '../components/showCaseBox/ShowCaseBoxPage'
 
@@ -42,3 +44,5 @@ export const query = graphql`
         }
     }
 `
+
+export const Head = () => <SEO title="das fruehwerk" />

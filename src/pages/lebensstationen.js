@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import { SEO } from '../components/Seo'
 
 // import s from '../assets/images/s.png'
 
@@ -60,3 +61,5 @@ export const query = graphql`
         }
     }
 `
+
+export const Head = () => <SEO title="LEBENSSTATIONEN LEON LEONHARD" />

@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
 import PageBanner from '../components/PageBanner'
@@ -97,3 +98,7 @@ export const query = graphql`
         }
     }
 `
+
+export const Head = () => (
+    <SEO title="Von der Kunstgeschichte in die Gegenwart" />
+)
