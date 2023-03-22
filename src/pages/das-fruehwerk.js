@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
+import { SEO } from '../components/Seo'
 
 import { SEO } from '../components/Seo'
 
@@ -46,3 +47,4 @@ export const query = graphql`
 `
 
 export const Head = () => <SEO title="das fruehwerk" />
+

@@ -7,6 +7,7 @@ import { SEO } from '../components/Seo'
 import Layout from '../components/Layout'
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
+import { SEO } from '../components/Seo'
 
 import verzeichnisImage from '../assets/images/Verzeichnis_image.jpg'
 
@@ -167,4 +168,6 @@ export const query = graphql`
 
 export default PublikationenPage
 
+
 export const Head = () => <SEO title="Leo Leonhard als Buchillustrator" />
+

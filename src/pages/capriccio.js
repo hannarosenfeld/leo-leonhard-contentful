@@ -6,6 +6,7 @@ import { SEO } from '../components/Seo'
 
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
 import '../styles/single-page-style.css'
@@ -85,3 +86,4 @@ export const query = graphql`
 `
 
 export const Head = () => <SEO title="CAPRICCIO AN DER AUTOBAHN" />
+

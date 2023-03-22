@@ -4,9 +4,7 @@ import { SEO } from '../components/Seo'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/footer/Footer'
-// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-
-// import ausstellungen from '../assets/images/Slbst_Öl.jpg'
+import { SEO } from '../components/Seo'
 
 export default function Ausstellungen({ data }) {
     return (
