@@ -81,7 +81,7 @@ export default function GrafikPage({ data }) {
 
 // TODO: need to simlify: DRY
 export const query = graphql`
-    query getGrafikContent {
+    query getGrafikContentPage {
         allContentfulPageBanner(filter: { slug: { eq: "grafik" } }) {
             nodes {
                 slug
