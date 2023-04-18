@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 import PageBanner from '../components/PageBanner'
 import IntroText from '../components/IntroText'
+import { SEO } from '../components/Seo'
 
 import verzeichnisImage from '../assets/images/Verzeichnis_image.jpg'
 
@@ -49,6 +50,7 @@ const PublikationenPage = ({ data }) => {
                             const image = getImage(book.coverImage)
                             return (
                                 <div
+                                    key={book.id}
                                     className="d-flex flex-column"
                                     style={{
                                         width: '13em',
@@ -164,3 +166,4 @@ export const query = graphql`
 `
 
 export default PublikationenPage
+export const Head = () => <SEO />

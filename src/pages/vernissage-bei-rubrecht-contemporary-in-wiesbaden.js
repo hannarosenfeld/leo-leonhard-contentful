@@ -1,23 +1,26 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
-import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
 import Template from '../components/showCaseBox/ShowCaseBoxPage'
+import { SEO } from '../components/Seo'
 
-export default function DialogVerehrtenAltenMeistern({ data }) {
-    const myNodes = data.allContentfulShowcaseBox.nodes
+export default function VernissageRubrechtContemporaryWiesbaden({ data }) {
+    const myNodes = data.Rubrecht.nodes
     return (
         <Layout>
             {myNodes.map((item) => {
                 const image = getImage(item.image)
+                const newgallery = item.gallery
                 return (
                     <Template
                         key={item.slug}
                         alt={item.header}
                         src={image}
+                        gallery={newgallery}
                         text={item.text.childMdx.body}
+                        title={item.header}
                     />
                 )
             })}
@@ -25,9 +28,13 @@ export default function DialogVerehrtenAltenMeistern({ data }) {
     )
 }
 export const query = graphql`
-    query ShowCaseBoxQueryDialog {
-        allContentfulShowcaseBox(
-            filter: { slug: { eq: "dialog-mit-den-verehrten-alten-meistern" } }
+    query ShowCaseBoxQueryVersissageRubrecht {
+        Rubrecht: allContentfulShowcaseBox(
+            filter: {
+                slug: {
+                    eq: "vernissage-bei-rubrecht-contemporary-in-wiesbaden"
+                }
+            }
         ) {
             nodes {
                 id
@@ -39,10 +46,13 @@ export const query = graphql`
                     }
                 }
                 image {
-                    gatsbyImageData(width: 1200, placeholder: BLURRED)
+                    gatsbyImageData(placeholder: BLURRED)
+                }
+                gallery {
+                    gatsbyImageData(placeholder: BLURRED)
                 }
             }
         }
     }
 `
-export const Head = () => <SEO title="Dialog Verehrten Alten Meistern" />
+export const Head = () => <SEO />

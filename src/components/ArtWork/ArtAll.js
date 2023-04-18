@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 export default function ArtAll() {
     const data = useStaticQuery(graphql`
-        query getGrafikContent {
+        query getGrafikContentArt {
             allContentfulGrafik(filter: { type: { eq: "Zeichnung" } }) {
                 nodes {
                     year
@@ -36,7 +36,7 @@ export default function ArtAll() {
     `)
     return (
         <>
-            <h1>acá intentamos renderizar todo junto: {query.header}</h1>
+            <h1>acá intentamos renderizar todo junto: {data.header}</h1>
         </>
     )
 }

@@ -3,9 +3,7 @@ import { graphql } from 'gatsby'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/footer/Footer'
-// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-
-// import ausstellungen from '../assets/images/Slbst_Öl.jpg'
+import { SEO } from '../components/Seo'
 
 export default function Ausstellungen({ data }) {
     return (
@@ -28,6 +26,7 @@ export default function Ausstellungen({ data }) {
                     {data.allContentfulEinzelausstellungen.nodes.map(
                         (ausstellung) => (
                             <div
+                                key={ausstellung.id}
                                 style={{
                                     width: '30%'
                                 }}
@@ -46,6 +45,7 @@ export default function Ausstellungen({ data }) {
                                 >
                                     {ausstellung.ausstellungen.map((x) => (
                                         <div
+                                            key={x.id}
                                             className="mb-3"
                                             style={{
                                                 fontSize: '0.9em'
@@ -55,7 +55,10 @@ export default function Ausstellungen({ data }) {
                                                 {x.year}
                                             </p>
                                             {x.venues.map((v) => (
-                                                <p style={{ margin: '0' }}>
+                                                <p
+                                                    key={v.id}
+                                                    style={{ margin: '0' }}
+                                                >
                                                     {v.name}
                                                 </p>
                                             ))}
@@ -114,3 +117,4 @@ export const query = graphql`
         }
     }
 `
+export const Head = () => <SEO />

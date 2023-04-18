@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-// import s from '../assets/images/s.png'
+import { SEO } from '../components/Seo'
 
 export default function Lebensstationen({ data }) {
     return (
@@ -34,6 +34,7 @@ export default function Lebensstationen({ data }) {
                         <div className="mt-4  d-flex flex-column">
                             {data.allContentfulLebenslauf.nodes.map((entry) => (
                                 <div
+                                    key={entry.id}
                                     style={{ fontSize: '0.9em', width: '40%' }}
                                 >
                                     <p className="fett">{entry.year}</p>
@@ -60,3 +61,4 @@ export const query = graphql`
         }
     }
 `
+export const Head = () => <SEO />

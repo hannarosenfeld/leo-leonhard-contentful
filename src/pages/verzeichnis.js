@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import { SEO } from '../components/Seo'
 
 import { publications } from '../utils/verzeichnisData'
 
@@ -16,13 +17,16 @@ export default function Verzeichnis() {
 
                 <div className="verzeichnis-publications">
                     {publications.map(({ year, elements }) => (
-                        <div className="verzeichnis-publications-elements">
+                        <div
+                            className="verzeichnis-publications-elements"
+                            key={elements.id}
+                        >
                             <div>
                                 <p>{year}</p>
                             </div>
                             <div>
                                 {elements.map((element) => (
-                                    <p>{element}</p>
+                                    <p key={element.id}>{element}</p>
                                 ))}
                             </div>
                         </div>
@@ -32,3 +36,4 @@ export default function Verzeichnis() {
         </Layout>
     )
 }
+export const Head = () => <SEO />

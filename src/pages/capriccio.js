@@ -4,6 +4,7 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { SEO } from '../components/Seo'
 
 import Layout from '../components/Layout'
 import '../styles/single-page-style.css'
@@ -26,7 +27,10 @@ export default function CapriccioPage({ data }) {
                                 {item.images.map((elem) => {
                                     const image = getImage(elem)
                                     return (
-                                        <div className="single-container-image">
+                                        <div
+                                            key={elem.id}
+                                            className="single-container-image"
+                                        >
                                             <GatsbyImage
                                                 className="gallery-single-page-img"
                                                 image={image}
@@ -61,7 +65,7 @@ export default function CapriccioPage({ data }) {
 }
 
 export const query = graphql`
-    query getContent {
+    query getContentCappriccio {
         pflasterNodes: allContentfulUniquePage(
             filter: { slug: { eq: "capriccio" } }
         ) {
@@ -81,15 +85,4 @@ export const query = graphql`
         }
     }
 `
-
-// * titulo
-// * primer párrafo
-// * galería
-// * resto del texto
-
-// voy a crear en graphql --> ver si ya existe
-// una categoría "contenido página"
-// que va a tener campos: title, img, introtext, entry
-
-// introtext -> pflaster y capriccio con el titulo y la entradilla
-// esta es la que aparece en home -> limitar el numero de char
+export const Head = () => <SEO title="capriccio" />
